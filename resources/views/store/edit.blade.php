@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="" method="post" >
+    <form action="{{route('store.edit', $store->id)}}" method="post" >
         @csrf
 
         <div class="mb-3">
@@ -40,7 +40,7 @@
             <input type="text" class="form-control" id="name" name="manager" value="{{ $store->manager }}">
         </div>
         <div class="mb-3">
-            <select name="status" id="">
+            <select name="status" value="{{$store->status}}" id="">
                 <option value="working">Đang hoạt động</option>
                 <option value="not working">Không hoạt động</option>
             </select>

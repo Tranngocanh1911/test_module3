@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
         return [
             'name'=> 'required|min:3',
             'phonenumber' => 'required|min:10|numeric',
-            'email'=> 'required|email|unique:email',
+            'email'=> 'required|email',
             'address'=> 'required|min:6',
             'manager'=> 'required|min:3'
         ];

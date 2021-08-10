@@ -24,5 +24,6 @@ Route::prefix('store')->group(function (){
     Route::get('/edit/{id}', [StoreController::class, 'edit'])->name('store.edit');
     Route::post('/edit/{id}', [StoreController::class, 'update']);
     Route::get('/delete/{id}', [StoreController::class, 'delete'])->name('store.delete');
+    Route::get('/search',[StoreController::class,'search'])->name('store.search');
 });
 

@@ -38,11 +38,11 @@ class StoreController extends Controller
     public function update(StoreRequest $request, $id){
         $store = Store::findOrFail($id);
         $store->name = $request->input('name');
-        $store->name = $request->input('phonenumber');
-        $store->name = $request->input('email');
-        $store->name = $request->input('address');
-        $store->name = $request->input('manager');
-        $store->name = $request->input('status');
+        $store->phonenumber = $request->input('phonenumber');
+        $store->email = $request->input('email');
+        $store->address = $request->input('address');
+        $store->manager = $request->input('manager');
+        $store->status = $request->input('status');
         $store->save();
         return redirect()->route('store.index');
     }
@@ -50,5 +50,11 @@ class StoreController extends Controller
         $store = Store::findOrFail($id);
         $store->delete();
         return redirect()->route('store.index');
+    }
+    public function search(Request $request)
+    {
+        $store = $request->search;
+        $stores = Store::where('name', 'LIKE', "%" . $store . "%")->get();
+        return view('store.list', compact('stores'));
     }
 }

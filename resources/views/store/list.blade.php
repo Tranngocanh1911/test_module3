@@ -18,7 +18,10 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Danh sách đại lý phân phối</h1>
-
+    <form method="get" action="{{route('store.search')}}" class="form-inline my-2 my-lg-0">
+        <input type="search" class="form-control mr-sm-2" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
